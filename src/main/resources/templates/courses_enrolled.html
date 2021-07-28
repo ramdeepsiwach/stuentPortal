@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Student Management System</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+	<div class="container my-2">
+		<h1>Enrolled Courses List</h1>
+
+		<a th:href="@{/showNewCoursesFormStudent}" class="btn btn-primary btn-sm mb-3"> Enroll Course </a>
+
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>
+						Course Name
+					</th>
+					<th>
+						Course Description
+					</th>
+					<th>
+						Course Fees
+					</th>
+					<th> Actions </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="courses : ${listCourses}">
+					<td th:text="${courses.courseName}"></td>
+					<td th:text="${courses.courseDescription}"></td>
+					<td th:text="${courses.courseFees}"></td>
+					<td> <a th:href="@{/deleteStudentCourse/{id}(id=${courses.id})}" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/home}" class="btn btn-primary btn-sm mb-3"> Logout </a>
+
+
+
+	</div>
+</body>
+
+</html>

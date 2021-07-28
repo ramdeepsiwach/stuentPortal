@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Student Management System</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Enroll Course</h1>
+		<hr>
+		<h2>Save Course</h2>
+
+		<form th:action="@{/enrollNewCourseStudent}" method="POST">
+			<div class="form-group">
+				<label for="course">Choose course</label>
+				<select class="form-control selectpicker" name="courseId" id="course">
+					<option th:each="course : ${listCourses}" th:value="${course.id}" th:text="${course.courseName}">course
+					</option>
+
+				</select>
+			</div>
+			<button type="submit" class="btn btn-info col-2"> Enroll Course</button>
+
+		</form>
+
+		<hr>
+
+		<a th:href="@{/coursesEnrolled}"> Back to Course List</a>
+	</div>
+</body>
+
+</html>
