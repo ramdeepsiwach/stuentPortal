@@ -4,3 +4,9 @@
 [submodule "simple"]
 	path = screenshot
 	url = ../screenshot.git
+[submodule "stuentPortal"]
+	path = stuentPortal
+	url = https://github.com/ramdeepsiwach/stuentPortal
+[submodule "subMo"]
+	path = subMo
+	url = https://github.com/ramdeepsiwach/stuentPortal.git
